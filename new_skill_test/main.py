@@ -18,6 +18,7 @@ def lambda_handler(event, context):
     logging.info("Executing main lambda_handler for AlexaDeploymentTestHandler class")
 
     deployment_handler = AlexaDeploymentTestHandler()
-    handler_response = deployment_handler.process_request(event, context)
+    # handler_response = deployment_handler.process_request(event, context)
+    handler_response = deployment_handler._test_response("")
 
     return handler_response
