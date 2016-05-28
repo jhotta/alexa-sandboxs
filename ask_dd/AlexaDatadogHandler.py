@@ -2,7 +2,7 @@
 from pyalexaskill.AlexaBaseHandler import AlexaBaseHandler
 
 
-class AlexaDeploymentTestHandler(AlexaBaseHandler):
+class AlexaDatadogHandler(AlexaBaseHandler):
 
     # Sample concrete implementation of the AlexaBaseHandler to test the
     # deployment scripts and process.
@@ -12,6 +12,7 @@ class AlexaDeploymentTestHandler(AlexaBaseHandler):
 
     def __init__(self):
         super(self.__class__, self).__init__()
+        self.card_title = "Test Datadog Response"
 
 
     def _test_response(self, msg):

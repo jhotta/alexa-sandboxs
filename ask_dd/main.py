@@ -1,6 +1,6 @@
 
 import logging
-from YourDeploymentHandler import YourDeploymentHandler
+from AlexaDatadogHandler import AlexaDatadogHandler
 
 
 #  Main entry point for the Lambda function.
