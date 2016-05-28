@@ -1,6 +1,6 @@
 {
   "session": {
-    "sessionId": "SessionId.c2114f1e-17e0-4fe1-8955-901b97ac773f",
+    "sessionId": "SessionId.801f9654-306b-4ac7-8b61-1e7256782784",
     "application": {
       "applicationId": "amzn1.echo-sdk-ams.app.f4b13cad-0983-497b-aa12-89e16ba8f2b9"
     },
@@ -11,18 +11,16 @@
   },
   "request": {
     "type": "IntentRequest",
-    "requestId": "EdwRequestId.1a23e78a-c181-40af-92f9-0912fe348ad9",
-    "timestamp": "2016-05-28T03:37:55Z",
+    "requestId": "EdwRequestId.6389f6ba-c186-472c-8680-bacbe0b2b91d",
+    "timestamp": "2016-05-28T06:22:19Z",
     "intent": {
       "name": "NextBusIntent",
       "slots": {
         "BusStop": {
-          "name": "BusStop",
-          "value": "nozaki"
+          "name": "BusStop"
         }
       }
     },
     "locale": "en-US"
   },
   "version": "1.0"
-}
