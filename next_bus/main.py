@@ -1,4 +1,3 @@
-
 import logging
 from AlexaNextBusHandler import AlexaNextBusHandler
 
@@ -24,3 +23,4 @@ def lambda_handler(event, context):
     handler_response = deployment_handler.process_request(event, context)
 
     return handler_response
+

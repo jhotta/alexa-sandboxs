@@ -73,9 +73,12 @@ class AlexaNextBusHandler(AlexaBaseHandler):
         should_end_session = True
         card_output = "Sample Card Output"
         speech_output = "Sample Speech Output"
-
-        bus_stop = self._get_bus_stop(intent_request)
         intent_name = self._get_intent_name(intent_request)
+        bus_stop = self._get_bus_stop(intent_request)
+
+        if bus_stop == None:
+            bus_stop = 'hachiman'
+
         if intent_name == "NextBusIntent":
 
             speech_output = "at " + bus_stop + " in 10 minutes"
@@ -143,9 +146,10 @@ class AlexaNextBusHandler(AlexaBaseHandler):
 
     def _get_bus_stop(self, intent_request):
         intent = self._get_intent(intent_request)
-        intent_name = None
-        if intent is not None and 'slots' in intent:
 
+        if intent is not None and 'value' in intent['slots']['BusStop']:
             bus_stop = intent['slots']['BusStop']['value']
+        else:
+            bus_stop = None
 
         return bus_stop

@@ -26,3 +26,33 @@
   },
   "version": "1.0"
 }
+
+
+
+
+{
+  "session": {
+    "sessionId": "SessionId.801f9654-306b-4ac7-8b61-1e7256782784",
+    "application": {
+      "applicationId": "amzn1.echo-sdk-ams.app.f4b13cad-0983-497b-aa12-89e16ba8f2b9"
+    },
+    "user": {
+      "userId": "amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QG2QBVHKVDMVW7W2JDIVXXK3NT26CTJIBUNAO2A2I7P7G7L7TMENQRHBQ6M7AUKXGUZPYYXAFG5KR4LMJPAWLCJKMUNK3J72E5EWCZZXL2U3FDLRFUKSW77JOIYGJHY33TBINP3QYUSSX3PLV5Z32I7FFRBA"
+    },
+    "new": true
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.6389f6ba-c186-472c-8680-bacbe0b2b91d",
+    "timestamp": "2016-05-28T06:22:19Z",
+    "intent": {
+      "name": "NextBusIntent",
+      "slots": {
+        "BusStop": {
+          "name": "BusStop"
+        }
+      }
+    },
+    "locale": "en-US"
+  },
+  "version": "1.0"
