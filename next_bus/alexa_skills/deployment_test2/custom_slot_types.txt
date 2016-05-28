@@ -1,0 +1,4 @@
+BUS_STOPS:
+Nozaki
+Yoshino
+Hachiman
