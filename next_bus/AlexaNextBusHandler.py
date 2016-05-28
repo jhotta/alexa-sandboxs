@@ -15,7 +15,7 @@ class AlexaNextBusHandler(AlexaBaseHandler):
     def _test_response(self, msg):
         # type: (object) -> object
         session_attributes = {}
-        card_title = "Test Response"
+        card_title = "Test Next Bus ERROR Response"
         card_output = "Test card output"
         speech_output = "Welcome to the Python Alexa Test Deployment for request type {0}.  It seems to have worked.".format(
             msg)
