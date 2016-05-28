@@ -74,10 +74,11 @@ class AlexaNextBusHandler(AlexaBaseHandler):
         card_output = "Sample Card Output"
         speech_output = "Sample Speech Output"
 
+        bus_stop = self._get_bus_stop(intent_request)
         intent_name = self._get_intent_name(intent_request)
         if intent_name == "NextBusIntent":
 
-            speech_output = "in 10 minutes"
+            speech_output = "at " + bus_stop + " in 10 minutes"
             speechlet = self._build_speechlet_response(self.card_title,
                                                        card_output,
                                                        speech_output,
@@ -138,3 +139,13 @@ class AlexaNextBusHandler(AlexaBaseHandler):
 
     def on_start_over_intent(self, intent_request, session):
         return self._test_response("on start over intent")
+
+
+    def _get_bus_stop(self, intent_request):
+        intent = self._get_intent(intent_request)
+        intent_name = None
+        if intent is not None and 'slots' in intent:
+
+            bus_stop = intent['slots']['BusStop']['value']
+
+        return bus_stop

@@ -2,7 +2,12 @@
   "intents": [
     {
       "intent": "NextBusIntent",
-      "slots": []
+      "slots": [
+        {
+          "name": "BusStop",
+          "type": "BUS_STOPS"
+        }
+      ]
     }
   ]
 }
