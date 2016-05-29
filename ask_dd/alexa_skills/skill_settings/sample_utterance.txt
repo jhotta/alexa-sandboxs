@@ -1,7 +1,10 @@
-DatadogGetIntent what is the prod status
+DatadogGetIntent what is the {DeploymentEnv} status
 DatadogGetIntent what is the status
-DatadogGetIntent provide the prod status
-DatadogGetIntent prod
-DatadogGetIntent status
-DatadogSetIntent set whatever to whatever
-DatadogSetIntent who is {EmployeeName}
+DatadogGetIntent provide the {DeploymentEnv} status
+DatadogGetIntent status {DeploymentEnv}
+DatadogGetIntent status of {DeploymentEnv}
+DatadogGetIntent status of the {DeploymentEnv}
+DatadogGetIntent the {DeploymentEnv}
+DatadogSetIntent set {DeploymentEnv}
+DatadogEmployeeIntent who is {EmployeeName}
+

@@ -21,3 +21,10 @@ jose
 sam
 cellene
 hattori
+
+
+DEPLOYMENT_ENV:
+prod
+production
+stage
+staging

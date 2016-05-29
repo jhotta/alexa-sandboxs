@@ -78,10 +78,17 @@ class AlexaDatadogHandler(AlexaBaseHandler):
         should_end_session = True
         card_output = "Sample Card Output"
         intent_name = self._get_intent_name(intent_request)
-        employee_name = self._get_employee_status(intent_request)
 
         if intent_name == "DatadogGetIntent":
-            speech_output = "The prod is running just fine!"
+            deployment_env = self._get_deployment_env(intent_request)
+
+            if deployment_env in ["prod", "production"]:
+                speech_output = "The prod is running just fine!"
+            elif deployment_env in ["stage", "staging"]:
+                speech_output = "Someone had just launched, 1,000 instances on the staging!"
+            else:
+                speech_output = "Which environment do you want to know?"
+
             speechlet = self._build_speechlet_response(self.card_title,
                                                        card_output,
                                                        speech_output,
@@ -91,7 +98,17 @@ class AlexaDatadogHandler(AlexaBaseHandler):
             response = self._build_response(session_attributes, speechlet)
 
         elif intent_name == "DatadogSetIntent":
+            speech_output = "Requested setting is Done!"
+            speechlet = self._build_speechlet_response(self.card_title,
+                                                       card_output,
+                                                       speech_output,
+                                                       reprompt_text,
+                                                       should_end_session)
 
+            response = self._build_response(session_attributes, speechlet)
+
+        elif intent_name == "DatadogEmployeeIntent":
+            employee_name = self._get_employee_name(intent_request)
 
             if employee_name.lower() in ["jay", "naotaka", "hotta"]:
                 speech_output = "Jay Hotta, is the first Datadog employee, in Japan"
@@ -162,7 +179,7 @@ class AlexaDatadogHandler(AlexaBaseHandler):
     def on_start_over_intent(self, intent_request, session):
         return self._test_response("on start over intent")
 
-    def _get_employee_status(self, intent_request):
+    def _get_employee_name(self, intent_request):
         intent = self._get_intent(intent_request)
 
         if intent is not None and 'value' in intent['slots']['EmployeeName']:
@@ -171,3 +188,13 @@ class AlexaDatadogHandler(AlexaBaseHandler):
             employee_name = None
 
         return employee_name
+
+    def _get_deployment_env(self, intent_request):
+        intent = self._get_intent(intent_request)
+
+        if intent is not None and 'value' in intent['slots']['DeploymentEnv']:
+            deployment_env = intent['slots']['DeploymentEnv']['value']
+        else:
+            deployment_env = None
+
+        return deployment_env

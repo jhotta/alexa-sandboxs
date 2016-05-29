@@ -1,6 +1,6 @@
 {
   "session": {
-    "sessionId": "SessionId.b3e66013-78d6-4902-9578-01a1a944affe",
+    "sessionId": "SessionId.8fa30d2f-ad55-4588-855f-6d9cc6475806",
     "application": {
       "applicationId": "amzn1.echo-sdk-ams.app.8e24826d-3612-4ed4-af89-ce6c4ab18f28"
     },
@@ -11,11 +11,16 @@
   },
   "request": {
     "type": "IntentRequest",
-    "requestId": "EdwRequestId.fec00381-36d2-42e5-adb5-5725db130341",
-    "timestamp": "2016-05-29T02:22:36Z",
+    "requestId": "EdwRequestId.2bddaf41-908d-4318-ab65-e4062c2ef5d7",
+    "timestamp": "2016-05-29T06:01:25Z",
     "intent": {
       "name": "DatadogGetIntent",
-      "slots": {}
+      "slots": {
+        "DeploymentEnv": {
+          "name": "DeploymentEnv",
+          "value": "prod"
+        }
+      }
     },
     "locale": "en-US"
   },

@@ -2,14 +2,28 @@
   "intents": [
     {
       "intent": "DatadogGetIntent",
-      "slots": []
+      "slots": [
+        {
+          "name": "DeploymentEnv",
+          "type": "DEPLOYMENT_ENV"
+        }
+      ]
     },
     {
-      "intent": "DatadogSetIntent",
+      "intent": "DatadogEmployeeIntent",
       "slots": [
         {
           "name": "EmployeeName",
           "type": "EMPLOYEE_NAME"
+        }
+      ]
+     },
+    {
+      "intent": "DatadogSetIntent",
+      "slots": [
+        {
+          "name": "DeploymentEnv",
+          "type": "DEPLOYMENT_ENV"
         }
       ]
     }
