@@ -78,10 +78,11 @@ class AlexaDatadogHandler(AlexaBaseHandler):
         reprompt_text = "I did not hear you sample"
         should_end_session = True
         card_output = "Sample Card Output"
-        speech_output = "Sample Speech Output"
+        speech_output = "Welcome to Datadog, How can I help you!"
 
         intent_name = self._get_intent_name(intent_request)
-        if intent_name == "Your First Intent":
+        if intent_name == "DatadogGetIntent":
+            speech_output = "The prod is running just fine!"
             speechlet = self._build_speechlet_response(self.card_title,
                                                        card_output,
                                                        speech_output,
@@ -90,7 +91,8 @@ class AlexaDatadogHandler(AlexaBaseHandler):
 
             response = self._build_response(session_attributes, speechlet)
 
-        elif intent_name == "Your Second Intent":
+        elif intent_name == "DatadogSetIntent":
+            speech_output = "Jay Hotta, is the first Datadog employee in Japan!"
             speechlet = self._build_speechlet_response(self.card_title,
                                                        card_output,
                                                        speech_output,
