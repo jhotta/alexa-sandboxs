@@ -1,7 +1,11 @@
 {
   "intents": [
     {
-      "intent": "DeploymentIntent",
+      "intent": "DatadogGetIntent",
+      "slots": []
+    },
+    {
+      "intent": "DatadogSetIntent",
       "slots": []
     }
   ]

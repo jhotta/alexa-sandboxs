@@ -1,3 +1,12 @@
-DeploymentIntent what is the deployment status
-DeploymentIntent what is the status
-DeploymentIntent provide the deployment status
+DatadogGetIntent what is the prod status
+DatadogGetIntent what is the status
+DatadogGetIntent provide the prod status
+DatadogGetIntent prod
+DatadogGetIntent status
+DatadogSetIntent set whatever to whatever
+DatadogSetIntent who is Jay
+DatadogSetIntent who is Naotaka
+DatadogSetIntent who is Naotaka Hotta
+DatadogSetIntent who is Jay Hotta
+DatadogSetIntent who is Naotaka Jay Hotta
+DatadogSetIntent who is Hotta
