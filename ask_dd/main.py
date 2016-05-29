@@ -19,7 +19,7 @@ logger.setLevel(logging.INFO)
 def lambda_handler(event, context):
     logging.info("Executing main lambda_handler for YourDeploymentHandler class")
 
-    deployment_handler = YourDeploymentHandler()
+    deployment_handler = AlexaDatadogHandler()
     handler_response = deployment_handler.process_request(event, context)
 
     return handler_response
