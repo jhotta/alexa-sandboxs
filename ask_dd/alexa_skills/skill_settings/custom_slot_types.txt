@@ -1,5 +1,7 @@
 EMPLOYEE_NAME:
-Jay
-Jay Hotta
-Naotaka Hotta
-Naotaka Jay Hotta
+jay
+jay hotta
+hotta
+naotaka
+naotaka hotta
+naotaka nay hotta

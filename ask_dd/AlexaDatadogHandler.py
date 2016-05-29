@@ -1,4 +1,3 @@
-
 from pyalexaskill.AlexaBaseHandler import AlexaBaseHandler
 
 
@@ -92,10 +91,16 @@ class AlexaDatadogHandler(AlexaBaseHandler):
             response = self._build_response(session_attributes, speechlet)
 
         elif intent_name == "DatadogSetIntent":
-            speech_output = "Hum... We do not know."
 
-            if employee_name in ["Jay", "Naotaka", "Jay Hotta", "Hotta", "Naotaka Hotta", "Naotaka Jay Hotta"]:
-                speech_output = "Jay Hotta, is the first Datadog employee in Japan!"
+
+            if employee_name.lower() in ["jay", "naotaka", "jay hotta", "hotta", "naotaka hotta", "naotaka jay hotta"]:
+                speech_output = "Jay Hotta, is the first Datadog employee, in Japan"
+            elif employee_name.lower() in ["alexis"]:
+                speech_output = "Alexis, is Our co-funder, and, CTO."
+            elif employee_name.lower() in ["masa"]:
+                speech_output = "Masa, is Our newest! and, Japan based. employee."
+            else:
+                speech_output = "Huuuum... We do not know."
 
             speechlet = self._build_speechlet_response(self.card_title,
                                                        card_output,
