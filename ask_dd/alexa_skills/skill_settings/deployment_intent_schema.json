@@ -6,7 +6,12 @@
     },
     {
       "intent": "DatadogSetIntent",
-      "slots": []
+      "slots": [
+        {
+          "name": "EmployeeName",
+          "type": "EMPLOYEE_NAME"
+        }
+      ]
     }
   ]
 }

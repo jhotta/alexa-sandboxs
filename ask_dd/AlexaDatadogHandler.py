@@ -78,9 +78,9 @@ class AlexaDatadogHandler(AlexaBaseHandler):
         reprompt_text = "I did not hear you sample"
         should_end_session = True
         card_output = "Sample Card Output"
-        speech_output = "Welcome to Datadog, How can I help you!"
-
         intent_name = self._get_intent_name(intent_request)
+        employee_name = self._get_employee_status(intent_request)
+
         if intent_name == "DatadogGetIntent":
             speech_output = "The prod is running just fine!"
             speechlet = self._build_speechlet_response(self.card_title,
@@ -92,7 +92,11 @@ class AlexaDatadogHandler(AlexaBaseHandler):
             response = self._build_response(session_attributes, speechlet)
 
         elif intent_name == "DatadogSetIntent":
-            speech_output = "Jay Hotta, is the first Datadog employee in Japan!"
+            speech_output = "Hum... We do not know."
+
+            if employee_name in ["Jay", "Naotaka", "Jay Hotta", "Hotta", "Naotaka Hotta", "Naotaka Jay Hotta"]:
+                speech_output = "Jay Hotta, is the first Datadog employee in Japan!"
+
             speechlet = self._build_speechlet_response(self.card_title,
                                                        card_output,
                                                        speech_output,
@@ -153,3 +157,12 @@ class AlexaDatadogHandler(AlexaBaseHandler):
     def on_start_over_intent(self, intent_request, session):
         return self._test_response("on start over intent")
 
+    def _get_employee_status(self, intent_request):
+        intent = self._get_intent(intent_request)
+
+        if intent is not None and 'value' in intent['slots']['EmployeeName']:
+            employee_name = intent['slots']['EmployeeName']['value']
+        else:
+            employee_name = None
+
+        return employee_name
