@@ -1,7 +1,23 @@
 EMPLOYEE_NAME:
 jay
-jay hotta
 hotta
 naotaka
-naotaka hotta
-naotaka nay hotta
+masa
+alexis
+matt
+dustin
+oliver
+garner
+toni
+jessica
+mikka
+amit
+ricky
+ray
+randy
+jeff
+john
+jose
+sam
+cellene
+hattori

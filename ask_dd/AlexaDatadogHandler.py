@@ -93,14 +93,14 @@ class AlexaDatadogHandler(AlexaBaseHandler):
         elif intent_name == "DatadogSetIntent":
 
 
-            if employee_name.lower() in ["jay", "naotaka", "jay hotta", "hotta", "naotaka hotta", "naotaka jay hotta"]:
+            if employee_name.lower() in ["jay", "naotaka", "hotta"]:
                 speech_output = "Jay Hotta, is the first Datadog employee, in Japan"
             elif employee_name.lower() in ["alexis"]:
                 speech_output = "Alexis, is Our co-funder, and, CTO."
-            elif employee_name.lower() in ["masa"]:
+            elif employee_name.lower() in ["masa", "hattori"]:
                 speech_output = "Masa, is Our newest! and, Japan based. employee."
             else:
-                speech_output = "Huuuum... We do not know."
+                speech_output = "Huuuum... We do not know whom you asked?"
 
             speechlet = self._build_speechlet_response(self.card_title,
                                                        card_output,
