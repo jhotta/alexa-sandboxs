@@ -11,7 +11,6 @@ from AlexaDatadogHandler import AlexaDatadogHandler
 #  Role: lambda_basic_execution
 
 
-
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
