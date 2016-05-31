@@ -7,4 +7,7 @@ DatadogGetIntent status of the {DeploymentEnv}
 DatadogGetIntent the {DeploymentEnv}
 DatadogSetIntent set {DeploymentEnv}
 DatadogEmployeeIntent who is {EmployeeName}
+DatadogBestEmployeeIntent who is the best employee
+DatadogBestEmployeeIntent who is the best person
+DatadogBestEmployeeIntent who is the best
 

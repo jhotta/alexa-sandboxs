@@ -110,11 +110,11 @@ class AlexaDatadogHandler(AlexaBaseHandler):
         elif intent_name == "DatadogEmployeeIntent":
             employee_name = self._get_employee_name(intent_request)
 
-            if employee_name.lower() in ["jay", "naotaka", "hotta"]:
+            if employee_name in ["jay", "naotaka", "hotta"]:
                 speech_output = "Jay Hotta, is the first Datadog employee, in Japan"
-            elif employee_name.lower() in ["alexis"]:
+            elif employee_name in ["alexis"]:
                 speech_output = "Alexis, is Our co-funder, and, CTO."
-            elif employee_name.lower() in ["masa", "hattori"]:
+            elif employee_name in ["masa", "hattori"]:
                 speech_output = "Masa, is Our newest! and, Japan based. employee."
             else:
                 speech_output = "Huuuum... We do not know whom you asked?"
@@ -126,6 +126,17 @@ class AlexaDatadogHandler(AlexaBaseHandler):
                                                        should_end_session)
 
             response = self._build_response(session_attributes, speechlet)
+
+        elif intent_name == "DatadogBestEmployeeIntent":
+            speech_output = "Jay Hotta, is the best!"
+            speechlet = self._build_speechlet_response(self.card_title,
+                                                       card_output,
+                                                       speech_output,
+                                                       reprompt_text,
+                                                       should_end_session)
+
+            response = self._build_response(session_attributes, speechlet)
+
         else:
             raise ValueError("Invalid intent")
 
